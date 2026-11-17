@@ -1,0 +1,36 @@
+mysql> CREATE DATABASE college;
+ERROR 1007 (HY000): Can't create database 'college'; database exists
+mysql> use college;
+Database changed
+mysql> INSERT INTO student
+    -> VALUES(7,'Suresh','BCA',88,'Koppal');
+Query OK, 1 row affected (0.14 sec)
+
+mysql> INSERT INTO student VALUES
+    -> (8,'Pooja','BCA',78,'Koppal'),
+    -> (9,'Ramesh','BCom',82,'Gangavathi'),
+    -> (10,'Geeta','BCA',91,'Yelburga');
+Query OK, 3 rows affected (0.10 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> UPDATE student
+    -> SET marks=95
+    -> WHERE id=7;
+Query OK, 1 row affected (0.10 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+mysql> DELETE FROM student
+    -> WHERE id=10;
+Query OK, 1 row affected (0.04 sec)
+
+mysql> SELECT*FROM student;
++----+--------+------------+-------+------------+
+| ID | NAME   | DEPARTMENT | MARKS | CITY       |
++----+--------+------------+-------+------------+
+|  7 | Suresh | BCA        |    95 | Koppal     |
+|  8 | Pooja  | BCA        |    78 | Koppal     |
+|  9 | Ramesh | BCom       |    82 | Gangavathi |
++----+--------+------------+-------+------------+
+3 rows in set (0.00 sec)
+
+mysql> DELETE FROM student;
+Query OK, 3 rows affected (0.05 sec)
